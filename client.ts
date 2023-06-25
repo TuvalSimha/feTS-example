@@ -14,5 +14,24 @@ const allMyFollowingArtistsResponse = await client["/me/following"].get({
     }
 })
 
+
+// top 5 tracks from the last 30 days
+const topTracks = await client["/me/top/{type}"].get({
+    params: {
+        type: "tracks",
+    },
+    query: {
+        time_range: "short_term",
+        limit: 5,
+    }
+})
+
+
+const topTracksResponse = await topTracks.json();
+console.log(topTracksResponse);
+
+
+
 const allMyFollowingArtists = await allMyFollowingArtistsResponse.json();
 console.log(allMyFollowingArtists);
+
