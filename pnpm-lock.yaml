@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@headlessui/react':
     specifier: ^1.7.15
@@ -35,8 +39,8 @@ dependencies:
     specifier: ^8.0.1
     version: 8.0.1(webpack@5.88.2)
   fets:
-    specifier: 0.4.6
-    version: 0.4.6
+    specifier: 0.4.8
+    version: 0.4.8
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -2490,8 +2494,8 @@ packages:
     dependencies:
       reusify: 1.0.4
 
-  /fets@0.4.6:
-    resolution: {integrity: sha512-9fuZCdDpvUd1gJPIy8+8ZgKv/20ES5sDnAEqyPMKJtB6f9mJ8L+14ZudsQfI4htbDQEwHKAaVSJn97Q7AWg7pQ==}
+  /fets@0.4.8:
+    resolution: {integrity: sha512-Cjz5mtQnqOSLilGt7COZXE0Jrx54+sreWTkPDkmVgPZeyu9bRCdf1GGiGZegLgZsdg2g8xCDZdsnsXtRNUjCvw==}
     engines: {node: '>=16.0.0'}
     dependencies:
       '@ardatan/fast-json-stringify': 0.0.6(ajv-formats@2.1.1)(ajv@8.12.0)
@@ -3746,7 +3750,3 @@ packages:
   /zod@3.21.4:
     resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
     dev: false
-
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false

@@ -12,13 +12,13 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "./components/ui/avatar";
 import { PlayerSheet } from "./components/player-sheet";
 import { fetchAllClubs, fetchClubInfo } from "./fets/endpoint";
-import { Club } from "./helpers";
 import { Header } from "./components/header";
 import { TeamsCards } from "./components/teams-crads";
 import { NormalizeOAS, OASModel } from "fets";
 import openapi from "./fets/openapi";
 
 type Player = OASModel<NormalizeOAS<typeof openapi>, "Player">;
+type Club = OASModel<NormalizeOAS<typeof openapi>, "Team">;
 
 export function App() {
   const [selectedClub, setSelectedClub] = useState<Club | undefined>(undefined);
