@@ -1,4 +1,4 @@
-import { Player } from "../helpers";
+import { Player } from "../fets/type-helpers";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import {
   Sheet,

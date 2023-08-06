@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
-import { Club } from "../helpers";
+
+import { Club } from "../fets/type-helpers";
 
 interface TeamsCardsProps {
   clubData: Club[] | undefined;

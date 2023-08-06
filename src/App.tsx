@@ -14,11 +14,7 @@ import { PlayerSheet } from "./components/player-sheet";
 import { fetchAllClubs, fetchClubInfo } from "./fets/endpoint";
 import { Header } from "./components/header";
 import { TeamsCards } from "./components/teams-crads";
-import { NormalizeOAS, OASModel } from "fets";
-import openapi from "./fets/openapi";
-
-type Player = OASModel<NormalizeOAS<typeof openapi>, "Player">;
-type Club = OASModel<NormalizeOAS<typeof openapi>, "Team">;
+import { Club, Player } from "./fets/type-helpers";
 
 export function App() {
   const [selectedClub, setSelectedClub] = useState<Club | undefined>(undefined);
@@ -27,6 +23,7 @@ export function App() {
   );
 
   const { data: clubData } = useQuery("Clubs", fetchAllClubs);
+  console.log("clubData", clubData);
   const playerData = useQuery({
     queryKey: ["Players", selectedClub?.TeamId],
     queryFn: () => fetchClubInfo(String(selectedClub?.TeamId)),

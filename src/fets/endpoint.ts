@@ -1,7 +1,8 @@
+import { env } from "process";
 import { client } from "./client";
 
 export async function fetchClubInfo(clubId?: string) {
-  if (!clubId) return;
+  if (!clubId) return null;
 
   const response = await client[
     "/{format}/PlayersByTeam/{competition}/{teamid}"
@@ -12,16 +13,18 @@ export async function fetchClubInfo(clubId?: string) {
       format: "json",
     },
     headers: {
-      "Ocp-Apim-Subscription-Key": process.env.SPORTDATA_API_TOKEN ?? "",
+      "Ocp-Apim-Subscription-Key": env.SOCCER_API_KEY ?? "",
     },
     query: {
-      key: process.env.SPORTDATA_API_TOKEN ?? "",
+      key: env.SOCCER_API_KEY ?? "",
     },
   });
 
+  console.log("response", response);
+
   if (!response.ok) {
     const errorResponse = await response.text();
-    throw new Error(errorResponse);
+    throw new Error(`Failed to fetch club info: ${errorResponse}`);
   }
 
   const data = await response.json();
@@ -36,12 +39,13 @@ export async function fetchAllClubs() {
       format: "json",
     },
     headers: {
-      "Ocp-Apim-Subscription-Key": process.env.SPORTDATA_API_TOKEN ?? "",
+      "Ocp-Apim-Subscription-Key": env.SOCCER_API_KEY ?? "",
     },
     query: {
-      key: process.env.SPORTDATA_API_TOKEN ?? "",
+      key: env.SOCCER_API_KEY ?? "",
     },
   });
+  console.log("response", response);
 
   if (!response.ok) {
     const errorResponse = await response.text();

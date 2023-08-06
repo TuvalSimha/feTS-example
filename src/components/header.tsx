@@ -1,4 +1,4 @@
-import { Club } from "../helpers";
+import { Club } from "../fets/type-helpers";
 import {
   Menubar,
   MenubarMenu,
