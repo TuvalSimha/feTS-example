@@ -7,7 +7,7 @@ function useErrorHandler(): ClientPlugin {
     onResponse({ response }) {
       if (!response.ok) {
         throw new Error(
-          `Request failed with status ${response.status}, ${response.statusText}, ${response.url}`
+          `Request failed with status ${response.status}, ${response.statusText}, ${response.url}`,
         );
       }
     },

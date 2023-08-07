@@ -19,7 +19,7 @@ import { Club, Player } from "./fets/type-helpers";
 export function App() {
   const [selectedClub, setSelectedClub] = useState<Club | undefined>(undefined);
   const [currentPlayer, setCurrentPlayer] = useState<Player | undefined>(
-    undefined
+    undefined,
   );
 
   const { data: clubData } = useQuery("Clubs", fetchAllClubs);
